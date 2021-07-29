@@ -1,0 +1,101 @@
+$color1: #17202A;
+$text_color1: #fff;
+$accent_color: #4BA0EC;
+
+@function pxToEm($px, $from: 16) {
+    @return ($px / $from)+0em;
+}
+
+body {
+    background: $color1;
+    color: $text_color1;
+    font-family: 'Helvetica Neue';
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: pxToEm(280) pxToEm(599) pxToEm(377);
+    margin: auto;
+    width: fit-content;
+}
+
+.logo {
+    text-decoration: none;
+    margin-left: 18px;
+}
+
+.sidemenu-nav {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        font-size: 22px;
+        font-weight: 700;
+        padding: 18px;
+        text-decoration: none;
+
+        &:hover {
+            background: rgba($accent_color, .4);
+        }
+    }
+
+    .text {
+        margin-left: 21px;
+        font-size: 20px;
+    }
+}
+
+.tweet {
+    background: $accent_color;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: pxToEm(100, 15);
+    color: inherit;
+    line-height: pxToEm(50, 15);
+    display: inline-block;
+    margin: pxToEm(18, 15) 0 0 pxToEm(7, 15);
+    text-align: center;
+    width: pxToEm(211, 15);
+    height: pxToEm(50, 15);
+}
+
+@media only screen and (max-width: 900px) {
+    .wrapper {
+        font-size: 14px;
+    }
+
+    .tweet {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .wrapper {
+        grid-template-columns: 60px 1fr;
+        width: 100%;
+    }
+
+    .right-column {
+        display: none;
+    }
+
+    .sidemenu-nav {
+        .text {
+            display: none;
+        }
+    }
+
+    .tweet {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
+.profile-name {
+    font-size: 20px;
+}
