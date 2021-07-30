@@ -63,6 +63,47 @@ body {
     height: pxToEm(50, 15);
 }
 
+.profile-name {
+    font-size: 20px;
+}
+
+.search-box {
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    $icon_space: 17;
+    $icon_width: 14.5;
+
+    &__field {
+        background: #283340;
+        border: 0;
+        border-radius: pxToEm(100);
+        box-sizing: border-box;
+        color: $text_color1;
+        font-size: inherit;
+        padding-left: pxToEm($icon_space * 2 + $icon_width);
+        padding-right: pxToEm($icon_space);
+        height: pxToEm(40);
+        width: pxToEm(346);
+
+
+        &::placeholder {
+            color: #8A98A4;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        left: pxToEm($icon_space);
+    }
+
+}
+
 @media only screen and (max-width: 900px) {
     .wrapper {
         font-size: 14px;
@@ -93,9 +134,4 @@ body {
         width: 45px;
         height: 45px;
     }
-}
-
-
-.profile-name {
-    font-size: 20px;
 }
